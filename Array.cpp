@@ -27,3 +27,39 @@ Array:: Array(int count,...)
     }
   va_end(v1);
 }
+Array:: ~ Array()
+{
+  delete data[];
+  capacity=0;
+  data=nullptr;
+}
+Array:: Array(const Array& ref)
+{ 
+  capacity=ref.capacity;
+  if(ref.data==nullptr)
+  { 
+    data=nullptr;
+    return;
+  }
+  data= new int[capacity];
+  for( int i=0;i<capacity;i++)
+    { 
+      data[i]= ref.data[i];
+    }
+}
+int & Array:: getsetcapacity(int index)
+{ 
+  if(isValidIndex(index))
+    return data[index];
+  exit(0);
+}
+int Array:: getCapacity()
+{ 
+  return capacity;
+}
+void Array:: display ()
+{ 
+  for(int i=0; i<capacity; i++)
+    cout<< data[i];
+} 
+
