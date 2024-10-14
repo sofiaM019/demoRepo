@@ -12,5 +12,5 @@ void operator=(Array && ref);
 Array (const Array & );
 int & getsetcapacity();
 int getcapacity();
-void display()const;
+void display();
 }
